@@ -2,6 +2,12 @@
 
 **代币死亡螺旋的机制级"尸检" + 一套避坑设计 skill。**
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](LICENSE)
+[![Python 3.x](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](simulations/)
+[![Cases analyzed](https://img.shields.io/badge/cases-50%2B-red.svg)](加密项目代币崩溃分析_2009-2026.md)
+[![Failure Skills](https://img.shields.io/badge/failure%20skills-10-purple.svg)](skills/)
+![GitHub stars](https://img.shields.io/github/stars/wusijian007/tokenomics-autopsy?style=social)
+
 > [English](README.md) | 🌐 **中文** · 许可:[CC BY 4.0](LICENSE)
 
 > 一个开源的代币经济学**避坑知识库**:从 2009–2026 的 50+ 个标志性崩盘中,蒸馏出可复用的失败反模式、博弈论模型与可复现仿真,供未来代币项目作设计参考。

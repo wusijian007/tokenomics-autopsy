@@ -2,6 +2,12 @@
 
 **Forensic post-mortems of 50+ token death spirals — and a design skill to avoid them.**
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](LICENSE)
+[![Python 3.x](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](simulations/)
+[![Cases analyzed](https://img.shields.io/badge/cases-50%2B-red.svg)](token-collapse-analysis-2009-2026.md)
+[![Failure Skills](https://img.shields.io/badge/failure%20skills-10-purple.svg)](skills/)
+![GitHub stars](https://img.shields.io/github/stars/wusijian007/tokenomics-autopsy?style=social)
+
 > 🌐 **English** | [中文](README.zh.md) · License: [CC BY 4.0](LICENSE)
 
 > An open-source **knowledge base for tokenomics design**: a forensic analysis of 50+ landmark collapses (2009–2026), distilled into reusable failure anti-patterns, game-theoretic models, and reproducible simulations — a design reference for future token projects.
