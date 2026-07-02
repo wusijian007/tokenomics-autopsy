@@ -345,8 +345,22 @@ retroactive funding · dual-currency segmentation (game economies).
 | Version | Theme | Contents | Rationale |
 |---|---|---|---|
 | **v4** ✅ *(shipped)* | Evaluation depth | economic-security module + S13/S14/S15 with a back-scored cost-of-corruption ledger (`data/security_panel.py`, 8/8 attacks flagged pre-hoc); valuation module + regime question (audit step 9); blind-spot register; λ formalization note (`lambda-formalization.md`); sim6 governance capture | evaluation credibility compounds first; the security pillar is the largest hole |
-| **v5** | Design depth | design-patterns library; archetype playbooks; liquidity-engineering, circular-economy, incentive-audit references; sims 5/7 + sim3 ext.; stress-runner v1 | the constructive dual — turns the autopsy into architecture |
-| **v6** | Product & scale | data pipeline, report generator, registry monitor, ABM bridge; empirical weights at n≈100; κ study; red-team program; scored universe → 50→100 | automation last: automate a validated instrument, not a draft |
+| **v5** ✅ *(shipped)* | Design depth | `design-patterns.md` (16 positive mechanisms, the constructive dual); `archetype-playbooks.md` (8 verticals, each with a survivor anchor + the *one number*); `liquidity-engineering.md` (LVR/venues/MM/oracle-depth), `circular-economy.md` (net-payer identity/dual-currency/sinks/DePIN), `incentive-audit.md` (IC-IR/Goodhart/sybil/cohorts); sim5 (LVR) + sim7 (PID — the first *healthy* sim) | the constructive dual — turns the autopsy into architecture |
+| **v6** | Product & scale | data pipeline, report generator, registry monitor, ABM bridge; empirical weights at n≈100; κ study; red-team program; scored universe → 50→100; stress-runner (design.yaml → sim suite → verdict); sim3 spender-class ext. | automation last: automate a validated instrument, not a draft |
+
+### v5 shipped — what landed vs the gap register
+
+Closed with the constructive work: **G-1…G-5** (incentive-audit: rewards as
+contracts, Goodhart/sybil, multitask crowding, behavioural layer, cohort
+accounting), **G-6/G-7** partial (mechanism-selection in archetype playbooks +
+P10/P11 patterns), **G-11…G-13/G-15** (liquidity-engineering: LVR, venue design,
+MM agreements, peg liquidity), **G-16…G-18** (circular-economy: net-payer
+identity, dual-currency, sink taxonomy, EVE-style telemetry), **G-21**
+(PID/sim7). Plus the positive pattern library (D2) and archetype playbooks (D1).
+Deferred to v6: stress-runner (D3), ABM bridge, data pipeline, empirical weights
++ κ study + red-team + scored-universe expansion (the remaining validation and
+automation items). Discipline held: scorecard still frozen at v2; the new design
+docs add no scored rows.
 
 ### v4 shipped — what landed vs the gap register
 

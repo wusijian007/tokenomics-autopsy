@@ -1,8 +1,9 @@
 # Runnable Simulations
 
-Four calibrated, dependency-light models that *demonstrate* the phase transition
-behind each game model. Use them to (a) build intuition, (b) fit a critical
-parameter to a specific design, or (c) generate charts for a report.
+Seven calibrated, dependency-light models: six *demonstrate* the phase
+transition behind a failure mode (λ>1) and one (`sim7`) demonstrates engineered
+stability (λ<1). Use them to (a) build intuition, (b) fit a critical parameter
+to a specific design, or (c) generate charts for a report.
 
 ## Setup
 ```bash
@@ -20,7 +21,9 @@ Each script is standalone and self-documenting: `python sim1_algo_stable_absorbi
 | `sim2_olympus_33_unraveling.py` | M2 (3,3) | OHM (premium ≈13.8×, APY ~7000%) | Premium collapses to **backing, not zero** (−92%). Bifurcation: premium needs perpetual new money > dilution. |
 | `sim3_p2e_faucet_sink.py` | M4 Inflation glut | Axie SLP (mint ≈4× burn) | Boom→saturation→bust; uncapped → ~0, capped (mint≤burn) survives the same demand shock. |
 | `sim4_bank_run_diamond_dybvig.py` | M1 Bank run | FTX/Celsius | Sequential service: ~51% of scenarios self-fulfill a run; pro-rata: ~17% (only extreme panic). |
+| `sim5_lvr_rented_liquidity.py` | S11 liquidity twin | AMM LPs | Fee APR vs LVR: below break-even the pool loses to arbitrage and only emissions keep LPs — "depth" rented by losses. Shows how emissions mask the loss until they stop. |
 | `sim6_governance_capture.py` | S13 (security panel) | Beanstalk | No timelock: attack profitable across ~84% of the (treasury, quorum-cost) plane; a 7-day timelock flips it to ~7% by forcing hold-through-the-crash. The timelock is the cheapest circuit breaker. |
+| `sim7_pid_damping.py` | P9 (healthy) | Reflexer RAI | The one *healthy* sim: a tuned PID controller turns a λ>1 unit into a damped one; over-tuning oscillates. Stability can be engineered — but it isn't demand. |
 
 ## How to adapt to your design
 - **Stablecoin**: set `sim1.simulate(R0=...)` to your reserve/liability ratio and
@@ -34,6 +37,11 @@ Each script is standalone and self-documenting: `python sim1_algo_stable_absorbi
 - **Governance**: set `sim6` treasury/float ratio and quorum-cornering cost;
   read off the timelock length that flips your design from the profitable-attack
   region to safe. Pair with the security panel in `economic-security.md`.
+- **DEX liquidity**: set `sim5` fee tier, daily volatility, and turnover; if fee
+  APR < LVR APR your pool's depth is rented by losses (`liquidity-engineering.md`).
+- **Engineered stability**: use `sim7` to tune a PID controller's gains for a
+  reflexive unit; the stability map shows the damped region. Pair with
+  design-pattern P9 — and remember stability ≠ demand.
 
 ## Modeling notes (honesty)
 These are **minimal didactic models**, not forecasting tools. They reproduce the

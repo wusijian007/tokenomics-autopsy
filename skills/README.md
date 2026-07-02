@@ -17,8 +17,13 @@ tokenomics-death-spiral-audit/
     audit-protocol.md           # 15-min quick screen + 10-step full audit + valuation module + blind-spot register
     survivors.md                # control group: why DAI/USDC/stETH/BNB/ETH/GMX/UNI/CRV held
     design-playbook.md          # 10-step design process, parameter benchmarks, launch checklist
+    design-patterns.md          # the positive pattern library — 16 mechanisms that work (dual of the anti-patterns)
+    archetype-playbooks.md      # per-vertical templates (DEX/lending/perp/stablecoin/L1/GameFi/DePIN/points)
+    liquidity-engineering.md    # LVR, venue design, MM agreements, oracle/peg liquidity
+    circular-economy.md         # net-payer identity, dual-currency, sink design, DePIN telemetry
+    incentive-audit.md          # rewards as contracts: IC/IR, Goodhart red-team, sybil cost, cohort accounting
     lambda-formalization.md     # λ as a Jacobian spectral radius + the reflexivity-beta estimation programme
-    simulations.md              # how to run/adapt the 5 calibrated simulations
+    simulations.md              # how to run/adapt the 7 calibrated simulations
 ```
 
 ## Using it as a Claude Code / Agent skill
@@ -32,9 +37,11 @@ mechanics, unlock schedules, or due diligence on a token.
   full audit: `game-models.md` (classify) → `scorecard.md` (spiral score) →
   `economic-security.md` (security panel) → `../simulations/` (stress-test) →
   valuation module → report template with blind-spot register.
-- **Designing a token**: `design-playbook.md` end to end, with
-  `anti-patterns.md` (15 axioms) as the constraint set and `survivors.md` as the
-  positive evidence base.
+- **Designing a token**: `design-playbook.md` process + `archetype-playbooks.md`
+  for your vertical → build from `design-patterns.md` (16 positive mechanisms),
+  with the `liquidity-engineering.md` / `circular-economy.md` / `incentive-audit.md`
+  deep dives; constrained by `anti-patterns.md` (15 axioms), evidenced by
+  `survivors.md`.
 
 The deep analysis with full derivations is in the repo root:
 `death-spiral-deep-analysis.md` (Chinese: `代币经济学死亡螺旋_深度分析与失败Skills.md`).

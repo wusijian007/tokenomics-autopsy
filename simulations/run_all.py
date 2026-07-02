@@ -6,7 +6,9 @@ MODULES = [
     "sim2_olympus_33_unraveling",
     "sim3_p2e_faucet_sink",
     "sim4_bank_run_diamond_dybvig",
+    "sim5_lvr_rented_liquidity",
     "sim6_governance_capture",
+    "sim7_pid_damping",
 ]
 
 if __name__ == "__main__":

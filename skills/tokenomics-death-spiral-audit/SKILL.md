@@ -79,12 +79,25 @@ stability infrastructure → incentives-as-CAC → liquidity plan → monitoring
 dashboard → pre-launch stress test → launch checklist. The constraints are the
 15 design axioms at the end of `references/anti-patterns.md` (12 spiral + 3
 economic-security); the non-negotiable one is axiom #1: **decouple fundamentals
-from price (`λ < 1`)**.
+from price (`λ < 1`)**. Then reach for the constructive toolkit:
+- **`references/design-patterns.md`** — 16 positive mechanisms (the dual of the
+  anti-patterns): what to build, its parameters, the failure modes it *adds*,
+  and which Sx it neutralizes. Compose, then re-audit the whole.
+- **`references/archetype-playbooks.md`** — per-vertical templates (DEX,
+  lending, perp, stablecoin, L1/L2, GameFi, DePIN, points) with benchmarks, a
+  survivor anchor, and the *one number* that decides each.
+- Deep dives: **`references/liquidity-engineering.md`** (LVR, venue choice, MM
+  terms, oracle depth), **`references/circular-economy.md`** (net-payer
+  identity, dual-currency, sink design, DePIN), **`references/incentive-audit.md`**
+  (rewards as contracts: IC/IR, Goodhart red-team, sybil cost, cohort accounting).
 
 ### Mode C — Demonstrating / stress-testing a mechanism
-The `simulations/` folder (see `references/simulations.md`) has runnable,
-calibrated models for the 4 archetypes. Use them to *show* the phase transition,
-fit the critical parameter to a specific design, or generate charts for a report.
+The `simulations/` folder (see `references/simulations.md`) has 7 runnable,
+calibrated models — six failure archetypes plus `sim7` (a *healthy* PID-damped
+design). Use them to *show* the phase transition, fit the critical parameter to
+a specific design, or generate charts for a report. The math behind λ (Jacobian
+spectral radius + the reflexivity-beta estimation programme) is in
+`references/lambda-formalization.md`.
 
 ## Quick-reference: the 15 failure Skills
 

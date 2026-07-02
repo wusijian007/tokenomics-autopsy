@@ -16,11 +16,13 @@ python sim1_algo_stable_absorbing_barrier.py
 | `sim2_olympus_33_unraveling.py` | (3,3) (OlympusDAO) | `charts/sim2_olympus_33.png` |
 | `sim3_p2e_faucet_sink.py` | Play-to-Earn (Axie/STEPN) | `charts/sim3_p2e_faucet_sink.png` |
 | `sim4_bank_run_diamond_dybvig.py` | Bank run (FTX/Celsius) | `charts/sim4_bank_run.png` |
+| `sim5_lvr_rented_liquidity.py` | LVR — when AMM liquidity is rented by losses (S11's liquidity twin) | `charts/sim5_lvr.png` |
 | `sim6_governance_capture.py` | Governance capture (Beanstalk) — S13, the timelock as circuit breaker | `charts/sim6_governance_capture.png` |
+| `sim7_pid_damping.py` | PID supply control — the first *healthy* sim: engineering λ<1 (RAI) | `charts/sim7_pid_damping.png` |
 
-> Numbering follows the roadmap: `sim5` (LVR) and `sim7` (PID damping) are
-> planned for v5; `sim6` (governance capture) ships with the v4 economic-security
-> module, so the sequence currently skips 5.
+> Six show a **failure** (λ>1); `sim7` is the constructive opposite — a
+> negative-feedback controller that damps a would-be spiral (RAI-style),
+> demonstrating engineered stability.
 
 `viz.py` holds the shared chart style. See
 `../skills/tokenomics-death-spiral-audit/references/simulations.md` for how to

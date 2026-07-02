@@ -25,7 +25,7 @@
 |---|---|---|
 | **L1 现象层** Cases | 50 个崩盘案例 + 8 类机制分类,总量估算 | [`加密项目代币崩溃分析_2009-2026.md`](加密项目代币崩溃分析_2009-2026.md) |
 | **L2 机制层** Mechanisms | 统一反身性方程(λ>1)、4 个博弈模型、供需定量解剖、逐案拆解 + 仿真图 | [`代币经济学死亡螺旋_深度分析与失败Skills.md`](代币经济学死亡螺旋_深度分析与失败Skills.md) |
-| **L3 知识层** Skills | 可触发的开源 skill pack:15 个失败反模式(12 螺旋 + 3 经济攻击)+ 可测量评分卡 + 腐化成本安全面板 + 完整审计协议(含估值/盲点模块)+ 幸存者对照组 + 10 步设计手册 | [`skills/`](skills/) |
+| **L3 知识层** Skills | 可触发的开源 skill pack:评估侧 = 15 个失败反模式(12 螺旋 + 3 经济攻击)+ 可测量评分卡 + 腐化成本安全面板 + 审计协议;设计侧 = 16 个正向机制模式库 + 8 个赛道 playbook + 流动性/循环经济/激励深潜文档 | [`skills/`](skills/) |
 
 支撑层 / Supporting:
 - [`simulations/`](simulations/) — 4 个校准过的可复现 Python 仿真,生成所有相变图表。
@@ -109,7 +109,7 @@
 3. 按 [`scorecard.md`](skills/tokenomics-death-spiral-audit/references/scorecard.md) 的测量方法给 12 行打分(实例:Terra 37/54,DAI 1/54)。
 4. 计算距阈值距离,用仿真压测,按模板出报告。
 
-**设计一个代币** — 按 10 步 [`design-playbook.md`](skills/tokenomics-death-spiral-audit/references/design-playbook.md):必要性测试 → 需求锚 → 价值捕获 → 供给基准 → 熔断器 → 激励即获客成本 → 流动性方案 → 监控面板 → 发行前压测 → 上线清单。
+**设计一个代币** — 走 10 步 [`design-playbook.md`](skills/tokenomics-death-spiral-audit/references/design-playbook.md)(必要性 → 需求锚 → 价值捕获 → 供给基准 → 熔断器 → 激励即获客成本 → 流动性 → 监控 → 压测 → 上线),在 [`archetype-playbooks.md`](skills/tokenomics-death-spiral-audit/references/archetype-playbooks.md) 里选你的赛道,用 [`design-patterns.md`](skills/tokenomics-death-spiral-audit/references/design-patterns.md) 的 16 个正向机制搭建——配 [流动性](skills/tokenomics-death-spiral-audit/references/liquidity-engineering.md)、[循环经济](skills/tokenomics-death-spiral-audit/references/circular-economy.md)、[激励](skills/tokenomics-death-spiral-audit/references/incentive-audit.md) 三份深潜文档。
 
 **跑仿真 / 生成图表:**
 ```bash
@@ -132,10 +132,11 @@ cryptofail/
 │   └── tokenomics-death-spiral-audit/
 │       ├── SKILL.md                           # L3 skill 入口(4 种模式)
 │       └── references/{anti-patterns,game-models,scorecard,economic-security,
-│                       audit-protocol,survivors,design-playbook,
-│                       lambda-formalization,simulations}.md
+│                       audit-protocol,survivors,design-playbook,design-patterns,
+│                       archetype-playbooks,liquidity-engineering,circular-economy,
+│                       incentive-audit,lambda-formalization,simulations}.md
 ├── simulations/
-│   ├── sim1..sim4 + sim6_governance_capture.py, run_all.py, viz.py
+│   ├── sim1..sim7_*.py(6 失败 + sim7 健康 PID), run_all.py, viz.py
 │   └── charts/*.png
 ├── data/
 │   ├── case_dataset.py / case_dataset.csv               # 38 个崩盘案例

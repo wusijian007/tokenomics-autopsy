@@ -24,7 +24,7 @@
 |---|---|---|
 | **L1 Phenomenon** — Cases | 50 collapse cases + an 8-class mechanism taxonomy, with a total-count estimate | [`token-collapse-analysis-2009-2026.md`](token-collapse-analysis-2009-2026.md) |
 | **L2 Mechanism** | Unified reflexivity equation (λ>1), 4 game models, quantitative supply-demand anatomy, case-by-case breakdowns + simulation charts | [`death-spiral-deep-analysis.md`](death-spiral-deep-analysis.md) |
-| **L3 Knowledge** — Skills | A triggerable open-source skill pack: 15 failure anti-patterns (12 spiral + 3 economic-attack), a measurable scorecard + cost-of-corruption security panel, a full audit protocol with valuation & blind-spot modules, a survivor control group, and a 10-step design playbook | [`skills/`](skills/) |
+| **L3 Knowledge** — Skills | A triggerable open-source skill pack: 15 failure anti-patterns (12 spiral + 3 economic-attack) + a measurable scorecard + security panel + audit protocol (evaluation), and a 16-mechanism positive pattern library + 8 archetype playbooks + liquidity/circular-economy/incentive deep dives (design) | [`skills/`](skills/) |
 
 Supporting layers:
 - [`simulations/`](simulations/) — 4 calibrated, reproducible Python simulations that generate every phase-transition chart.
@@ -111,7 +111,7 @@ See [`game-models.md`](skills/tokenomics-death-spiral-audit/references/game-mode
 3. Measure and score the 12 rows of [`scorecard.md`](skills/tokenomics-death-spiral-audit/references/scorecard.md) (worked examples: Terra 37/54, DAI 1/54).
 4. Compute distance-to-threshold, stress-test with the simulations, write the report from the template.
 
-**Design a token** — follow the 10-step [`design-playbook.md`](skills/tokenomics-death-spiral-audit/references/design-playbook.md): necessity test → demand anchor → value capture → supply benchmarks → circuit breakers → incentives-as-CAC → liquidity plan → monitoring dashboard → pre-launch stress test → launch checklist.
+**Design a token** — run the 10-step [`design-playbook.md`](skills/tokenomics-death-spiral-audit/references/design-playbook.md) (necessity → demand anchor → value capture → supply → breakers → incentives-as-CAC → liquidity → monitoring → stress test → launch), pick your vertical in [`archetype-playbooks.md`](skills/tokenomics-death-spiral-audit/references/archetype-playbooks.md), and build from the 16 positive mechanisms in [`design-patterns.md`](skills/tokenomics-death-spiral-audit/references/design-patterns.md) — with deep dives on [liquidity](skills/tokenomics-death-spiral-audit/references/liquidity-engineering.md), [circular economies](skills/tokenomics-death-spiral-audit/references/circular-economy.md), and [incentives](skills/tokenomics-death-spiral-audit/references/incentive-audit.md).
 
 **Run the simulations / regenerate charts:**
 ```bash
@@ -135,10 +135,11 @@ cryptofail/
 │   └── tokenomics-death-spiral-audit/
 │       ├── SKILL.md                       # L3 skill entry point (4 modes)
 │       └── references/{anti-patterns,game-models,scorecard,economic-security,
-│                       audit-protocol,survivors,design-playbook,
-│                       lambda-formalization,simulations}.md
+│                       audit-protocol,survivors,design-playbook,design-patterns,
+│                       archetype-playbooks,liquidity-engineering,circular-economy,
+│                       incentive-audit,lambda-formalization,simulations}.md
 ├── simulations/
-│   ├── sim1..sim4_*.py, run_all.py, viz.py, requirements.txt
+│   ├── sim1..sim7_*.py (6 failure + sim7 healthy PID), run_all.py, viz.py
 │   └── charts/*.png
 ├── data/
 │   ├── case_dataset.py / case_dataset.csv              # 38 collapse cases
