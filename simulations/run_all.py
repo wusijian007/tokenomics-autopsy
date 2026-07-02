@@ -9,6 +9,7 @@ MODULES = [
     "sim5_lvr_rented_liquidity",
     "sim6_governance_capture",
     "sim7_pid_damping",
+    "sim8_spender_class",
 ]
 
 if __name__ == "__main__":

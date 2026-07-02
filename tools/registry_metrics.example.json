@@ -1,0 +1,29 @@
+{
+  "_comment": "Example metrics snapshot for the registry monitor. A live deployment populates this from DefiLlama / CoinGecko / Dune at the marked fetch points in registry_monitor.py. Values here are illustrative, not live.",
+  "as_of": "2026-07-02",
+  "Ethena USDe": {
+    "supply_usd_bn": 6.2,
+    "consecutive_neg_funding_days": 12,
+    "secondary_discount_pct": 0.3,
+    "primary_redemptions_ok": true
+  },
+  "Hyperliquid HYPE": {
+    "realized_12mo_unlocks_pct_of_float": 22,
+    "drawdown_from_ath_pct": 35,
+    "hlp_shortfall_recap_via_mint": false
+  },
+  "pump.fun PUMP": {
+    "memecoin_volume_index": 0.7,
+    "reflexive_mint_dump_loop": false
+  },
+  "USDD": {
+    "trx_drawdown_pct": 20,
+    "redemption_wave_pct_supply": 5,
+    "discount_pct": 0.2
+  },
+  "Jupiter JUP": {
+    "next_90d_unlocks_pct_of_float": 12,
+    "run_shaped_event": false,
+    "protocol_fees_positive": true
+  }
+}

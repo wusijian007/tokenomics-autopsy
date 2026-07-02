@@ -85,6 +85,10 @@ Detail + antidotes: [`anti-patterns.md`](skills/tokenomics-death-spiral-audit/re
 
 ![holdout separation](simulations/charts/data_holdout_separation.png)
 
+**Empirical weights** — a data-driven logistic fit on the 53-case [scored universe](data/scored_universe.py) reproduces the hand weights' engine > structure > amplifier ranking ([`fit_weights.py`](data/fit_weights.py)). The near-perfect AUC is a *consistency* result (the set is largely in-sample), not a forward-accuracy claim — but the fit surfaces genuine recalibration signal (raise S9, treat S12 as combinatorial). The frozen v2 weights are retained pending an out-of-sample win:
+
+![weight fit](simulations/charts/data_weight_fit.png)
+
 ---
 
 ## The 4 game models
@@ -113,10 +117,18 @@ See [`game-models.md`](skills/tokenomics-death-spiral-audit/references/game-mode
 
 **Design a token** — run the 10-step [`design-playbook.md`](skills/tokenomics-death-spiral-audit/references/design-playbook.md) (necessity → demand anchor → value capture → supply → breakers → incentives-as-CAC → liquidity → monitoring → stress test → launch), pick your vertical in [`archetype-playbooks.md`](skills/tokenomics-death-spiral-audit/references/archetype-playbooks.md), and build from the 16 positive mechanisms in [`design-patterns.md`](skills/tokenomics-death-spiral-audit/references/design-patterns.md) — with deep dives on [liquidity](skills/tokenomics-death-spiral-audit/references/liquidity-engineering.md), [circular economies](skills/tokenomics-death-spiral-audit/references/circular-economy.md), and [incentives](skills/tokenomics-death-spiral-audit/references/incentive-audit.md).
 
+**Run it as a tool** — [`tools/`](tools/README.md) turns the checklist into code:
+```bash
+cd tools
+python stress_runner.py design.example.yaml     # design spec -> scored step-9 verdict
+python report_generator.py audit.example.json   # completed audit -> full markdown report
+```
+The stress-runner scores a design spec on all 12 spiral rows + the security panel, runs the matching sims, and prints the verdict (the bundled Terra-like `design.badexample.yaml` scores 42/54, 5 engine red lines, REDESIGN).
+
 **Run the simulations / regenerate charts:**
 ```bash
 cd simulations && python -m pip install -r requirements.txt && python run_all.py
-cd ../data && python case_dataset.py && python scorecard_calibration.py
+cd ../data && python case_dataset.py && python scorecard_calibration.py && python security_panel.py && python scored_universe.py && python fit_weights.py
 ```
 
 **Use it as a Claude / Agent skill:** drop `skills/tokenomics-death-spiral-audit/` into your skills directory; it triggers automatically when you ask about token model design or sustainability.
@@ -139,17 +151,25 @@ cryptofail/
 │                       archetype-playbooks,liquidity-engineering,circular-economy,
 │                       incentive-audit,lambda-formalization,simulations}.md
 ├── simulations/
-│   ├── sim1..sim7_*.py (6 failure + sim7 healthy PID), run_all.py, viz.py
+│   ├── sim1..sim8_*.py (6 failure + sim7 PID + sim8 spender-class), run_all.py, viz.py
 │   └── charts/*.png
+├── tools/                                              # v6 product layer
+│   ├── stress_runner.py + design.example.yaml          # design spec -> scored verdict
+│   ├── report_generator.py + audit.example.json        # audit -> markdown report
+│   ├── kappa_reliability.py                             # inter-rater κ (E3)
+│   └── registry_monitor.py + registry_metrics.example.json
 ├── data/
-│   ├── case_dataset.py / case_dataset.csv              # 38 collapse cases
-│   ├── scorecard_calibration.py / scorecard_calibration.csv   # 18-case in-sample calibration
-│   └── security_panel.py / security_panel.csv          # cost-of-corruption back-scoring (S13/S14/S15)
+│   ├── case_dataset.py / .csv                          # 38 collapse cases
+│   ├── scorecard_calibration.py / .csv                 # 18-case in-sample calibration
+│   ├── security_panel.py / .csv                        # cost-of-corruption back-scoring (S13/S14/S15)
+│   ├── scored_universe.py / .csv                       # 53-case unified scored set
+│   └── fit_weights.py / weight_fit.csv                 # empirical weight fit (hand vs data-driven)
 ├── ROADMAP.md                                          # frontier gap analysis + v4→v6 plan
 └── validation/
-    ├── README.md                                       # OOS protocol + freeze record
-    ├── holdout_backtest.py / holdout_backtest.csv      # 15 leakage-audited held-out cases
-    └── prospective-registry.md / registry_scores.csv   # frozen predictions (reviews 2027/2028)
+    ├── README.md                                       # OOS protocol + empirical weights + freeze record
+    ├── holdout_backtest.py / .csv                      # 15 leakage-audited held-out cases
+    ├── prospective-registry.md / registry_scores.csv   # frozen predictions (reviews 2027/2028)
+    └── red-team.md                                     # standing break-the-instrument challenge
 ```
 
 ## Research agenda

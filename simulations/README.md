@@ -19,10 +19,12 @@ python sim1_algo_stable_absorbing_barrier.py
 | `sim5_lvr_rented_liquidity.py` | LVR — when AMM liquidity is rented by losses (S11's liquidity twin) | `charts/sim5_lvr.png` |
 | `sim6_governance_capture.py` | Governance capture (Beanstalk) — S13, the timelock as circuit breaker | `charts/sim6_governance_capture.png` |
 | `sim7_pid_damping.py` | PID supply control — the first *healthy* sim: engineering λ<1 (RAI) | `charts/sim7_pid_damping.png` |
+| `sim8_spender_class.py` | Net-external-payer identity — a spender class saves a reward economy (circular-economy) | `charts/sim8_spender_class.png` |
 
-> Six show a **failure** (λ>1); `sim7` is the constructive opposite — a
-> negative-feedback controller that damps a would-be spiral (RAI-style),
-> demonstrating engineered stability.
+> Six show a **failure** (λ>1); `sim7` and `sim8` are constructive — a
+> negative-feedback controller that damps a would-be spiral (RAI-style), and a
+> spender class (net-external payers) that lets a reward economy survive a
+> growth stall.
 
 `viz.py` holds the shared chart style. See
 `../skills/tokenomics-death-spiral-audit/references/simulations.md` for how to

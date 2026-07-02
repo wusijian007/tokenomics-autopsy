@@ -9,6 +9,24 @@ instrument on evidence it has never seen, in two tiers of increasing rigor:
 | 1 | **Holdout backtest** — 15 historical cases never used in derivation, calibration, or any repo document | [`holdout_backtest.py`](holdout_backtest.py) | hindsight-scoring bias (mitigated, not eliminated) |
 | 2 | **Prospective registry** — living projects scored and frozen *before* outcomes exist, with falsifiable predictions and fixed review dates | [`prospective-registry.md`](prospective-registry.md) | none (the gold standard; requires time) |
 
+Supporting the tiers (v6 scaling work):
+
+- **Scored universe** ([`data/scored_universe.py`](../data/scored_universe.py)) —
+  the union of every scored case (18 calibration + 15 holdout + 20 new,
+  documented, = **53**), with per-row justifications, for weight-fitting and
+  reliability work. Community-contributable (see `CONTRIBUTING.md`).
+- **Empirical weights** ([`data/fit_weights.py`](../data/fit_weights.py)) — a
+  pure-numpy logistic fit on the 53 cases that asks whether a data-driven
+  ranking agrees with the hand weights (3/2/1). It does, closely
+  (§ "Empirical weights" below). The frozen v2 weights are **retained** — the
+  fit is a transparency cross-check, not a silent re-weighting.
+- **Red-team program** ([`red-team.md`](red-team.md)) — a standing challenge to
+  break the instrument on purpose; every successful attack becomes a new row, a
+  row fix, or a documented limitation.
+- **Tools** ([`tools/`](../tools/README.md)) — the `registry_monitor.py` checks
+  these frozen projects against their pre-registered triggers; `kappa_reliability.py`
+  computes inter-rater κ (E3) once real independent score sheets exist.
+
 ---
 
 ## Outcome definitions (pre-registered, used by both tiers)
@@ -112,6 +130,37 @@ Integrity rules:
    the scorecard.
 4. **No cherry-picking.** Projects cannot be silently dropped; a delisted or
    migrated token is graded against the outcome definitions as-is.
+
+## Empirical weights — does the data agree with the hand weights?
+
+`data/fit_weights.py` fits a logistic regression on the 53-case scored universe
+(rows → failed/survived) and compares it to the hand-weighted (3/2/1) score.
+
+Result: hand-weighted AUC ≈ **0.99**, 5-fold CV logistic AUC ≈ **1.00**; the
+data-driven weight *ranking* reproduces engine > structure > amplifier. Two
+honest, important caveats:
+
+- **The near-perfect AUC is a consistency result, not a forward-accuracy claim.**
+  The dataset is largely in-sample and single-author-labeled — the rows were
+  used to assign the very outcomes being predicted, so high separation is
+  expected almost by construction. The genuine forward test is the prospective
+  registry (Tier 2), where nothing is known yet. Do **not** read "0.99 AUC" as
+  "99% accurate at predicting the future."
+- **The fit surfaces real recalibration signal**, not a rubber stamp: it wants
+  to *raise* S9 (narrative-only almost always failed in the set) and *lower* S12
+  standalone (loops appear in both survivors like stETH and collapses like
+  Celsius — S12's value is in *combination*, which a linear model can't see).
+  This is exactly the kind of finding a future v3 recalibration would weigh.
+
+**Discipline:** the frozen v2 weights are **retained**. Fitted weights are a
+published transparency cross-check and a *candidate* for a future re-frozen v3 —
+adopted only if they beat the hand weights **out-of-sample** (registry review,
+or a larger independent set), per ROADMAP §3. Chart:
+`simulations/charts/data_weight_fit.png`.
+
+Open validation items (v6+): grow the scored universe toward 100 with
+independent labels; run a real inter-rater κ study (two humans, blind set,
+`tools/kappa_reliability.py`); grade the registry at 2027-07-02 / 2028-07-02.
 
 ## Freeze record
 

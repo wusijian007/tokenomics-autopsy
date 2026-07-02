@@ -84,6 +84,10 @@
 
 ![留出集分离度](simulations/charts/data_holdout_separation.png)
 
+**经验权重** — 在 53 案例[评分宇宙](data/scored_universe.py)上做数据驱动的逻辑回归拟合,复现了手工权重的 引擎 > 结构 > 放大器 排序([`fit_weights.py`](data/fit_weights.py))。近乎完美的 AUC 是**一致性**结果(数据集大部分是样本内),**不是**对未来的预测准确率;但拟合暴露了真实的再校准信号(该提高 S9、把 S12 当作组合项)。冻结的 v2 权重维持不变,等样本外胜出再议:
+
+![权重拟合](simulations/charts/data_weight_fit.png)
+
 ---
 
 ## 4 个博弈模型 / The 4 game models
@@ -111,10 +115,18 @@
 
 **设计一个代币** — 走 10 步 [`design-playbook.md`](skills/tokenomics-death-spiral-audit/references/design-playbook.md)(必要性 → 需求锚 → 价值捕获 → 供给基准 → 熔断器 → 激励即获客成本 → 流动性 → 监控 → 压测 → 上线),在 [`archetype-playbooks.md`](skills/tokenomics-death-spiral-audit/references/archetype-playbooks.md) 里选你的赛道,用 [`design-patterns.md`](skills/tokenomics-death-spiral-audit/references/design-patterns.md) 的 16 个正向机制搭建——配 [流动性](skills/tokenomics-death-spiral-audit/references/liquidity-engineering.md)、[循环经济](skills/tokenomics-death-spiral-audit/references/circular-economy.md)、[激励](skills/tokenomics-death-spiral-audit/references/incentive-audit.md) 三份深潜文档。
 
+**当作工具跑** — [`tools/`](tools/README.md) 把清单变成代码:
+```bash
+cd tools
+python stress_runner.py design.example.yaml     # 设计规格 → 打分 + step-9 结论
+python report_generator.py audit.example.json   # 完成的审计 → 完整 markdown 报告
+```
+stress-runner 把设计规格在全部 12 螺旋行 + 安全面板上打分、跑对应仿真、输出结论(附带的 Terra 式 `design.badexample.yaml` 得 42/54、5 条引擎红线、REDESIGN)。
+
 **跑仿真 / 生成图表:**
 ```bash
 cd simulations && python -m pip install -r requirements.txt && python run_all.py
-cd ../data && python case_dataset.py && python scorecard_calibration.py
+cd ../data && python case_dataset.py && python scorecard_calibration.py && python security_panel.py && python scored_universe.py && python fit_weights.py
 ```
 
 **作为 Claude / Agent skill 使用:** 把 `skills/tokenomics-death-spiral-audit/` 放进 skills 目录,询问代币模型设计/可持续性时会自动触发。
@@ -136,17 +148,25 @@ cryptofail/
 │                       archetype-playbooks,liquidity-engineering,circular-economy,
 │                       incentive-audit,lambda-formalization,simulations}.md
 ├── simulations/
-│   ├── sim1..sim7_*.py(6 失败 + sim7 健康 PID), run_all.py, viz.py
+│   ├── sim1..sim8_*.py(6 失败 + sim7 PID + sim8 spender-class), run_all.py, viz.py
 │   └── charts/*.png
+├── tools/                                          # v6 产品层
+│   ├── stress_runner.py + design.example.yaml      # 设计规格 → 打分结论
+│   ├── report_generator.py + audit.example.json    # 审计 → markdown 报告
+│   ├── kappa_reliability.py                         # 评分者间信度 κ(E3)
+│   └── registry_monitor.py + registry_metrics.example.json
 ├── data/
-│   ├── case_dataset.py / case_dataset.csv               # 38 个崩盘案例
-│   ├── scorecard_calibration.py / scorecard_calibration.csv  # 18 案例 in-sample 校准
-│   └── security_panel.py / security_panel.csv           # 腐化成本回测(S13/S14/S15)
+│   ├── case_dataset.py / .csv                           # 38 个崩盘案例
+│   ├── scorecard_calibration.py / .csv                  # 18 案例 in-sample 校准
+│   ├── security_panel.py / .csv                         # 腐化成本回测(S13/S14/S15)
+│   ├── scored_universe.py / .csv                        # 53 案例统一评分集
+│   └── fit_weights.py / weight_fit.csv                  # 经验权重拟合(手工 vs 数据)
 ├── ROADMAP.md                                           # 前沿差距分析 + v4→v6 计划
 └── validation/
-    ├── README.md                                        # OOS 协议 + 冻结记录
-    ├── holdout_backtest.py / holdout_backtest.csv       # 15 个泄漏审计留出案例
-    └── prospective-registry.md / registry_scores.csv    # 冻结预测(2027/2028 复核)
+    ├── README.md                                        # OOS 协议 + 经验权重 + 冻结记录
+    ├── holdout_backtest.py / .csv                        # 15 个泄漏审计留出案例
+    ├── prospective-registry.md / registry_scores.csv    # 冻结预测(2027/2028 复核)
+    └── red-team.md                                       # "打破工具"常设挑战
 ```
 
 ## 研究议程 / Research agenda

@@ -3,3 +3,6 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+# tool-generated outputs (regenerated from specs / audit inputs)
+tools/*.verdict.md
+tools/*-audit.md

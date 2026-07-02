@@ -92,12 +92,14 @@ from price (`λ < 1`)**. Then reach for the constructive toolkit:
   (rewards as contracts: IC/IR, Goodhart red-team, sybil cost, cohort accounting).
 
 ### Mode C — Demonstrating / stress-testing a mechanism
-The `simulations/` folder (see `references/simulations.md`) has 7 runnable,
-calibrated models — six failure archetypes plus `sim7` (a *healthy* PID-damped
-design). Use them to *show* the phase transition, fit the critical parameter to
-a specific design, or generate charts for a report. The math behind λ (Jacobian
-spectral radius + the reflexivity-beta estimation programme) is in
-`references/lambda-formalization.md`.
+The `simulations/` folder (see `references/simulations.md`) has 8 runnable,
+calibrated models — six failure archetypes plus two constructive ones (`sim7`
+PID-damped stability, `sim8` spender-class economy). Use them to *show* the
+phase transition, fit the critical parameter to a specific design, or generate
+charts for a report. The math behind λ (Jacobian spectral radius + the
+reflexivity-beta estimation programme) is in `references/lambda-formalization.md`.
+To score a whole design at once, `tools/stress_runner.py` runs the relevant sims
+and emits the step-9 verdict from a `design.yaml`.
 
 ## Quick-reference: the 15 failure Skills
 

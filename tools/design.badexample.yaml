@@ -1,0 +1,63 @@
+# A deliberately dangerous design (Terra-like algo-stable) to exercise the
+# stress-runner's red-line detection. Expected: high score, multiple engine
+# flags, REDESIGN verdict.
+name: DangerStableToken
+archetype: stablecoin
+
+demand:
+  zero_price_test: fail
+  yield_source: subsidy
+
+collateral:
+  native_share: 1.0        # backed by its own token (S1)
+  algorithmic: true        # algorithmic + own token (S6)
+
+redemption:
+  liquidity_coverage: 0.3  # cannot cover redemptions (S5)
+  fcfs: true
+
+emissions:
+  capped: true
+  sink_faucet_ratio: 1.0
+  sink_needs_new_users: false
+
+premium:
+  price_over_backing: 1.0
+  yield_from_inflation: false
+
+supply:
+  float_pct: 0.30
+  year1_unlock_pct_of_float: 0.10
+  fdv_to_revenue: 0
+
+value_capture: none
+
+holders:
+  revenue_positive: false
+  top10_holder_share: 0.6
+  team_locked: false
+  contract_backdoors: false
+
+incentives:
+  runway_months: 2         # subsidy runway < 12 (S2)
+  organic_tvl_share: 0.15  # rented TVL (S11)
+
+leverage:
+  loop_unwind_over_depth: 2.5   # unwind > depth (S12)
+
+contagion:
+  cross_collateralized: true    # (S10)
+
+governance:
+  votes_lockable: false         # flash-loanable votes (S13)
+  timelock_days: 0
+  treasury_over_float_mcap: 2.0
+  quorum_borrowable_below_value: true
+
+oracle:
+  token_used_as_leverage_collateral: true
+  manip_cost_over_borrowable: 0.4   # cheap to manipulate (S14)
+
+depin:
+  is_depin: false
+  revenue_over_emissions: 1.0

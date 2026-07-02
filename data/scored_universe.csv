@@ -1,0 +1,54 @@
+name,source,failed,S1_reflexive_collateral,S2_subsidized_demand,S3_uncapped_faucet,S4_inflation_premium,S5_fcfs_redemption,S6_algo_stable,S7_float_fdv,S8_velocity_leak,S9_narrative_only,S10_contagion,S11_mercenary_tvl,S12_leverage_loops,note
+Terra/LUNA-UST,calibration,1,2,2,0,1,2,2,0,0,1,2,1,2,4 engines at once: reflexive collateral + Anchor subsidy + run vector + absorbing barrier
+Iron Finance,calibration,1,2,1,0,1,2,2,0,0,1,0,0,0,partial-algo stable; TITAN mint on de-peg; first large DeFi bank run
+Basis Cash,calibration,1,2,0,0,1,1,2,0,1,1,0,0,0,seigniorage clone; peg never re-established
+OlympusDAO,calibration,1,1,2,1,2,1,0,0,1,1,0,0,1,"(3,3) premium unravels to backing; APY from mint + new bonds"
+Wonderland,calibration,1,1,2,1,2,1,0,0,1,1,1,0,0,largest OHM fork + treasury-trust collapse (Sifu)
+Axie SLP,calibration,1,0,2,2,0,0,0,1,2,1,0,1,0,uncapped faucet; sink (breeding) needs new players; scholar guilds = rented labor
+STEPN GST,calibration,1,0,2,2,0,0,0,1,2,1,0,1,0,"isomorphic to SLP: emission uncapped, sink needs new shoe buyers"
+FTX FTT,calibration,1,2,0,0,0,2,0,1,0,1,2,0,1,self-printed collateral at an affiliate + classic run
+Celsius,calibration,1,1,2,0,0,2,0,0,1,1,2,0,2,subsidized yield + FCFS promise + levered stETH loops
+Internet Computer,calibration,1,0,0,1,1,0,0,2,1,1,0,0,0,"no engine - pure S7 structure: supply glut bleed, weak zero-price anchor"
+MakerDAO DAI,calibration,0,0,0,0,0,0,0,0,0,0,1,0,0,"exogenous collateral; MKR mint is a backstop, not the peg mechanism"
+USDC,calibration,0,0,0,0,0,1,0,0,0,0,1,0,0,"SVB de-peg to ~$0.88 mean-reverted: claims on real, recoverable assets"
+Lido stETH,calibration,0,0,0,0,0,0,0,0,1,0,1,0,2,structure flag (loops) but hard 1:1 anchor; no redemption promise = nothing to run
+BNB,calibration,0,1,0,0,0,0,0,0,0,0,1,0,0,cash-flow anchor (fees/gas) + usage-linked burn; partial S1 remains
+Ethereum ETH,calibration,0,0,0,0,0,0,0,0,0,0,0,0,1,zero-price-test archetype; EIP-1559 sink proportional to usage
+GMX,calibration,0,0,1,1,0,0,0,0,0,0,0,0,0,real yield in ETH from trading fees; payer exists at any token price
+Uniswap UNI,calibration,0,0,0,0,0,0,0,1,2,0,0,0,0,"S8 control: zero value capture yet no spiral - no engine, lambda<1"
+Curve CRV,calibration,0,0,1,1,0,0,0,1,0,0,2,0,1,stressed survivor: founder leverage near-cascade; real-usage anchor held
+Neutrino USDN,holdout,1,2,1,0,0,1,2,0,0,1,2,0,1,"WAVES-backed algo-stable + Vires leverage entanglement; repeated de-pegs through 2022, abandoned by 2023"
+Deus DEI,holdout,1,2,1,0,0,1,2,0,0,1,1,0,1,"fractional stable partly backed by DEUS; de-pegged May 2022, never repegged (exploits compounded the reflexive design)"
+Tomb TOMB,holdout,1,1,1,0,2,0,2,0,1,1,0,0,0,"Basis-clone seigniorage pegged to FTM via TBOND/TSHARE; peg lost in 2022, never restored"
+StrongBlock STRONG,holdout,1,0,2,2,1,0,0,0,1,1,0,0,0,"node rewards funded by new node sales, no external revenue; -99%+ through 2022"
+Titano,holdout,1,0,2,1,2,0,0,0,1,1,0,0,0,"~102,000% APY auto-rebase fork wave; -99.9% within months"
+Solidly SOLID,holdout,1,0,2,2,0,0,0,1,1,0,0,1,0,"ve(3,3) hyper-emissions; TVL purely emission-chasing; -99% after founder exit (Mar 2022)"
+Blur,holdout,1,0,1,0,0,0,0,2,2,1,0,2,0,temporal holdout: zero-fee marketplace + points seasons + unlock overhang; ~-97% from ATH by 2025 while the protocol kept operating
+Celestia TIA,holdout,1,0,0,1,1,0,0,2,1,1,0,0,0,"temporal holdout: low float / high FDV, Oct-2024 unlock cliff, inflationary staking; -90%+ from Feb-2024 ATH; mirrors ICP (12 in-sample)"
+Tether USDT,holdout,0,0,0,0,0,1,0,0,0,0,1,0,0,"redeemed >$20B post-FTX without losing the peg; opacity scored pessimistically per protocol (S5=1, S10=1)"
+Frax FRAX,holdout,0,1,1,0,0,0,1,0,0,0,1,0,0,fractional-algo at the Terra contagion: held the peg; de-risked to full collateralization by governance vote (Feb 2023) -> re-scores ~4
+Chainlink LINK,holdout,0,0,0,0,0,0,0,1,2,0,0,0,0,"S8 control out-of-sample: years of weak value capture, no engine, no spiral across multiple bears"
+Rocket Pool rETH,holdout,0,0,0,0,0,0,0,0,0,0,1,0,1,"same June-2022 LST stress as stETH: no instant-redemption promise, smaller loop share; discount mean-reverted"
+Aave,holdout,0,1,0,0,0,0,0,0,0,0,1,0,1,absorbed CRV bad debt; stkAAVE safety module = mild self-insurance (S1=1); hosts loops but with caps/params
+Ampleforth AMPL,holdout,0,0,0,0,1,0,0,0,1,1,0,0,0,"violent rebase cycles but rebase is pro-rata (no dilution asymmetry), no redemption promise, no reserve: no engine, so cycles, not a spiral"
+Pendle,holdout,0,0,1,0,0,0,0,0,0,0,0,1,0,"points-wave beneficiary that survived the 2024 LRT unwind; real fees, vested incentives"
+Voyager VGX,new,1,1,1,0,0,2,0,0,1,1,2,0,0,CeFi bank run; dragged down by the 3AC default (contagion)
+Anchor ANC,new,1,0,2,0,0,1,0,1,1,1,2,1,1,the 19.5% subsidy engine of UST demand; died with Terra
+Klima DAO KLIMA,new,1,1,2,1,2,1,0,0,1,1,0,0,1,"(3,3) carbon fork; scored like OHM, unravelled to backing then near-zero"
+DeFi Kingdoms JEWEL,new,1,0,2,2,1,0,0,1,2,1,0,1,0,"GameFi inflation; scored like Axie SLP, emission-rented liquidity"
+SafeMoon SFM,new,1,0,0,0,0,0,0,1,2,2,0,0,0,reflection+high-tax narrative token; team charged with misappropriation
+HEX,new,1,0,2,0,1,0,0,0,1,1,0,0,0,"stake-for-high-APY, widely called Ponzi-like; no external revenue"
+Gala Games GALA,new,1,0,1,2,0,0,0,1,2,1,0,0,0,GameFi platform inflation + a co-founder dispute
+Mirror Protocol MIR,new,1,1,1,0,0,1,0,1,1,1,2,0,0,Terra-ecosystem synthetics; went to zero via contagion
+Waves,new,1,2,1,0,0,1,2,0,1,1,2,0,1,the L1 reflexively entangled with USDN (Vires leverage); repeated de-pegs
+Bancor BNT,new,1,1,1,0,0,1,0,1,1,0,1,0,0,IL-protection suspension broke trust; long bleed
+The Sandbox SAND,new,1,0,0,0,0,0,0,2,1,1,0,1,0,metaverse high-FDV unlock bleed; -97% as the narrative faded
+Decentraland MANA,new,1,0,0,0,0,0,0,2,1,1,0,0,0,metaverse unlock bleed; chronically thin active-user demand
+ApeCoin APE,new,1,0,0,0,0,0,0,2,1,1,0,1,0,airdrop + unlock overhang; continuous bleed after the narrative faded
+Synthetix SNX,new,0,1,1,0,0,0,0,0,0,0,1,0,1,SNX-collateralized synths (mild reflexivity) but survived multiple bears; real fees
+Compound COMP,new,0,0,1,0,0,0,0,0,1,0,1,0,0,"real lending fees, timelocked governance; survived 2022 intact"
+Convex CVX,new,0,0,1,0,0,0,0,1,1,0,1,1,0,"ve-aggregator on Curve; bribe-driven but real-fee anchored, survived"
+Solana SOL,new,0,0,0,0,0,0,0,1,0,0,1,0,0,near-death via FTX/Alameda holdings; recovered on a real-usage anchor
+Bitcoin BTC,new,0,0,0,0,0,0,0,0,0,0,0,0,0,no mechanism forces selling; the base-case no-engine asset (all zeros)
+Lido LDO,new,0,0,1,0,0,0,0,1,1,0,1,0,1,governance token over the largest LST; survived the June-2022 stETH stress
+Rocket Pool RPL,new,0,1,0,0,0,0,0,0,1,0,1,0,0,RPL bonds node operators (mild self-reference) but capped; survived

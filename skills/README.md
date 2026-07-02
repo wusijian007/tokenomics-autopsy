@@ -23,7 +23,7 @@ tokenomics-death-spiral-audit/
     circular-economy.md         # net-payer identity, dual-currency, sink design, DePIN telemetry
     incentive-audit.md          # rewards as contracts: IC/IR, Goodhart red-team, sybil cost, cohort accounting
     lambda-formalization.md     # λ as a Jacobian spectral radius + the reflexivity-beta estimation programme
-    simulations.md              # how to run/adapt the 7 calibrated simulations
+    simulations.md              # how to run/adapt the 8 calibrated simulations
 ```
 
 ## Using it as a Claude Code / Agent skill
@@ -42,6 +42,8 @@ mechanics, unlock schedules, or due diligence on a token.
   with the `liquidity-engineering.md` / `circular-economy.md` / `incentive-audit.md`
   deep dives; constrained by `anti-patterns.md` (15 axioms), evidenced by
   `survivors.md`.
+- **Running it as a tool**: `../tools/` — `stress_runner.py` scores a design
+  spec into the step-9 verdict; `report_generator.py` formats a completed audit.
 
 The deep analysis with full derivations is in the repo root:
 `death-spiral-deep-analysis.md` (Chinese: `代币经济学死亡螺旋_深度分析与失败Skills.md`).

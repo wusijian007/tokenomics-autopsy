@@ -1,0 +1,13 @@
+row,hand_weight,fitted_weight_rescaled,std_coef
+S1_reflexive_collateral,3.0,2.63,0.763
+S2_subsidized_demand,3.0,2.88,0.925
+S3_uncapped_faucet,2.0,2.04,0.562
+S4_inflation_premium,2.0,1.29,0.338
+S5_fcfs_redemption,3.0,3.57,0.948
+S6_algo_stable,3.0,1.3,0.36
+S7_float_fdv,2.0,3.73,1.041
+S8_velocity_leak,1.0,1.4,0.386
+S9_narrative_only,3.0,6.95,1.491
+S10_contagion,1.0,0.0,-0.224
+S11_mercenary_tvl,2.0,1.21,0.226
+S12_leverage_loops,2.0,0.0,-0.184

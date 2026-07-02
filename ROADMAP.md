@@ -346,7 +346,29 @@ retroactive funding · dual-currency segmentation (game economies).
 |---|---|---|---|
 | **v4** ✅ *(shipped)* | Evaluation depth | economic-security module + S13/S14/S15 with a back-scored cost-of-corruption ledger (`data/security_panel.py`, 8/8 attacks flagged pre-hoc); valuation module + regime question (audit step 9); blind-spot register; λ formalization note (`lambda-formalization.md`); sim6 governance capture | evaluation credibility compounds first; the security pillar is the largest hole |
 | **v5** ✅ *(shipped)* | Design depth | `design-patterns.md` (16 positive mechanisms, the constructive dual); `archetype-playbooks.md` (8 verticals, each with a survivor anchor + the *one number*); `liquidity-engineering.md` (LVR/venues/MM/oracle-depth), `circular-economy.md` (net-payer identity/dual-currency/sinks/DePIN), `incentive-audit.md` (IC-IR/Goodhart/sybil/cohorts); sim5 (LVR) + sim7 (PID — the first *healthy* sim) | the constructive dual — turns the autopsy into architecture |
-| **v6** | Product & scale | data pipeline, report generator, registry monitor, ABM bridge; empirical weights at n≈100; κ study; red-team program; scored universe → 50→100; stress-runner (design.yaml → sim suite → verdict); sim3 spender-class ext. | automation last: automate a validated instrument, not a draft |
+| **v6** ✅ *(shipped, partial)* | Product & scale | `tools/`: stress-runner (design.yaml → sims → step-9 verdict), report generator, κ machinery, registry monitor; scored universe → **53** + empirical weight fit (data agrees with hand weights); red-team program; sim8 spender-class. Deferred (need external inputs): live data pipeline, real κ study (needs 2 human raters), ABM bridge, scored universe → 100 | automation last: automate a validated instrument, not a draft |
+
+### v6 shipped — what landed vs deferred
+
+**Landed:** the product layer (`tools/README.md`) — `stress_runner.py`
+(design.yaml → scored step-9 verdict, calls sim4/sim6; Terra-like spec →
+42/54 REDESIGN), `report_generator.py` (audit JSON → full report),
+`kappa_reliability.py` (weighted-κ machinery), `registry_monitor.py`
+(pre-registered trigger checks). Validation scaling: `data/scored_universe.py`
+(53 cases) + `data/fit_weights.py` (pure-numpy logistic + CV AUC; the fit
+reproduces engine>structure>amplifier and flags S9/S12 recalibration signal,
+frozen v2 retained). `validation/red-team.md` (standing challenge + seed
+limitations). `sim8_spender_class.py` (net-external-payer identity — the D3/G-16
+capstone). Closes/advances D3 (stress-runner), D2 report tooling, E1 (scored
+universe grown), E2 (empirical weights machinery + first fit), E4 (red-team
+program).
+
+**Honestly deferred** (require inputs this environment can't fabricate): a live
+DefiLlama/CoinGecko/Dune **data pipeline** (the monitor's data layer is a tested
+stub); a real **inter-rater κ study** (needs two independent human scorers on a
+blind set — the machinery is ready); the **ABM/cadCAD bridge** (needs a real ABM
+framework to be worth shipping); **scored universe → 100** with independent
+labels. These stay open items, tracked in `validation/README.md`.
 
 ### v5 shipped — what landed vs the gap register
 

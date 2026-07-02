@@ -22,6 +22,14 @@ new game-theoretic model.
   (2027-07-02 / 2028-07-02) per the append-only rules in `validation/README.md`.
   Challenges to any individual row score are welcome — that is what the
   published per-row justifications are for.
+- **Scored universe** — add well-documented cases (with per-row justifications)
+  to `data/scored_universe.py` to grow the set toward 100 and improve the
+  empirical weight fit. Independent (non-author) labels are especially valuable.
+- **Red-team** — try to break the instrument: a design that passes the scorecard
+  and still dies, or one it wrongly condemns. See `validation/red-team.md`;
+  every successful attack becomes a new row, a row fix, or a documented limit.
+- **Tools** — improvements to `tools/` (stress-runner spec coverage, report
+  templates, wiring the registry monitor's data layer to live feeds).
 - **Translations** — keeping the EN ⇄ ZH documents in sync.
 - **Data** — improving `data/case_dataset.py` / `data/scorecard_calibration.py`
   with better-sourced estimates.

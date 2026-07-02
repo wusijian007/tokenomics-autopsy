@@ -1,0 +1,65 @@
+# Example design spec for the stress-runner (tools/stress_runner.py).
+# A machine-readable version of the design-playbook micro-example: a mid-size
+# perp/derivatives protocol token. Flat sections, scalar key: value pairs.
+# Run:  python stress_runner.py design.example.yaml
+
+name: ExampleDerivativesToken
+archetype: perp            # dex | lending | perp | stablecoin | l1 | gamefi | depin | points
+
+demand:
+  zero_price_test: pass    # pass | fail  (does demand survive price->0?)
+  yield_source: real_fees  # real_fees | subsidy | none
+
+collateral:
+  native_share: 0.0        # share of reserves in native/affiliated token (S1)
+  algorithmic: false       # algorithmic stablecoin using own token? (S6)
+
+redemption:
+  liquidity_coverage: 1.4  # liquid assets / instantly-redeemable liabilities (S5)
+  fcfs: false              # instant first-come-first-served vs illiquid assets?
+
+emissions:
+  capped: true             # hard cap or mint<=burn? (S3)
+  sink_faucet_ratio: 1.2   # (burn+lock+real use) / emission
+  sink_needs_new_users: false
+
+premium:
+  price_over_backing: 1.0  # market price / treasury backing (S4); 1.0 = no premium
+  yield_from_inflation: false
+
+supply:
+  float_pct: 0.20              # float at TGE (S7)
+  year1_unlock_pct_of_float: 0.23
+  fdv_to_revenue: 30           # FDV / annual real revenue
+
+value_capture: fee_share   # fee_share | burn | velock | none  (S8)
+
+holders:
+  revenue_positive: true
+  top10_holder_share: 0.25
+  team_locked: true
+  contract_backdoors: false
+
+incentives:
+  runway_months: 18        # incentive reserve / monthly net subsidy (S2)
+  organic_tvl_share: 0.75  # pre-incentive usage / total (S11)
+
+leverage:
+  loop_unwind_over_depth: 0.4   # potential loop unwind / 2%-DEX-depth (S12)
+
+contagion:
+  cross_collateralized: false   # native token collateral elsewhere / key-person loans (S10)
+
+governance:
+  votes_lockable: true          # votes locked, not flash-loanable (S13)
+  timelock_days: 3
+  treasury_over_float_mcap: 0.8
+  quorum_borrowable_below_value: false
+
+oracle:
+  token_used_as_leverage_collateral: true   # (S14)
+  manip_cost_over_borrowable: 2.0           # cost to move oracle / borrowable value
+
+depin:
+  is_depin: false
+  revenue_over_emissions: 1.0   # service revenue / emissions value (S15)
