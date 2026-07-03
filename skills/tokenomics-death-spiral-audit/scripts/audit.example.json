@@ -1,0 +1,44 @@
+{
+  "project": "ExampleYieldStable",
+  "date": "2026-07-02",
+  "verdict": "A partial-collateral yield stablecoin with a real fee anchor but a subsidized boost and a points program. No engine at 2, one structure flag (S11) - expect deleveraging/bleed risk if the subsidy tapers before organic demand matures. Zero-price test: marginal pass (redemption claim exists, but demand is subsidy-heavy).",
+  "mechanism": "Dual-track: (1) a PSM-style redemption against exogenous reserves (healthy anchor), (2) a boosted-yield vault funded partly by a declining subsidy. Classify as Model 4 (supply/incentive) with a Model 1 (run) tail if coverage slips. Expected failure shape: bleed, not run, unless coverage < 1.",
+  "scorecard": {
+    "S1": {"score": 1, "confidence": "verified", "reason": "20% of reserves in an affiliated LST"},
+    "S2": {"score": 1, "confidence": "verified", "reason": "boost yield subsidized; runway 14mo, taper published"},
+    "S3": {"score": 0, "confidence": "verified", "reason": "no uncapped reward token"},
+    "S4": {"score": 0, "confidence": "verified", "reason": "no premium mechanics"},
+    "S5": {"score": 1, "confidence": "reported", "reason": "coverage 1.1; partial gates under stress"},
+    "S6": {"score": 0, "confidence": "verified", "reason": "partial-collateral, not algorithmic-on-own-token"},
+    "S7": {"score": 1, "confidence": "verified", "reason": "float 18%, year-1 unlocks 30% of float"},
+    "S8": {"score": 0, "confidence": "verified", "reason": "fee-share to stakers"},
+    "S9": {"score": 0, "confidence": "verified", "reason": "real redemption + fee demand"},
+    "S10": {"score": 1, "confidence": "estimated", "reason": "LST reserve imports one external risk"},
+    "S11": {"score": 2, "confidence": "verified", "reason": "organic TVL share 24%; most TVL arrived with the points program"},
+    "S12": {"score": 1, "confidence": "estimated", "reason": "some looped usage on lending markets, capped"}
+  },
+  "security_panel": {
+    "S13": {"score": 0, "reason": "vote-locked + 4-day timelock; quorum floor above borrowable float"},
+    "S14": {"score": 1, "reason": "token lendable on one venue; caps present but oracle window short"},
+    "S15": {"score": 0, "reason": "not a DePIN/work network"}
+  },
+  "thresholds": [
+    {"trigger": "S2 runway", "current": "14 months", "threshold": "12 months", "trend": "declining", "eta": "~Q2 next year at current burn"},
+    {"trigger": "S11 organic share", "current": "24%", "threshold": "50%", "trend": "flat", "eta": "snapshot in 5 weeks"},
+    {"trigger": "S5 coverage", "current": "1.1", "threshold": "1.0", "trend": "stable", "eta": "-"}
+  ],
+  "stress_test": "sim4 at coverage 1.1: run basin ~22% (only severe panic). sim (LVR) on the main pool: fee APR 9% vs LVR ~6% -> LPs marginally profitable without emissions. Design survives a 2022-grade drawdown if the subsidy tapers on schedule.",
+  "contagion": "LST reserve is the main external link (S10=1). No key-person leverage found. Most plausible contagion path: the reserve LST de-pegs -> coverage slips below 1 -> the Model-1 run tail activates.",
+  "valuation": {
+    "regime": "equity-regime (fee-share claim)",
+    "quadrant": "priced for perfection (low structural risk, rich vs fee multiple)",
+    "notes": "Fee multiple ~40x vs peers at ~15-25x; the premium prices in the subsidy-funded growth continuing. Not a price target - contextualizes the audit."
+  },
+  "prescriptions": [
+    "[structure] S11 - vest points past TGE, reward fee-paying usage not parked TVL, publish the organic-baseline dashboard",
+    "[watch] S2 - hold runway >= 12mo at current token price; taper by rule not vote",
+    "[watch] S5/S10 - monitor reserve-LST peg and coverage; pre-commit the gate ladder",
+    "[watch] S14 - lengthen the oracle window or tighten the borrow cap on the lending venue"
+  ],
+  "limitations": "S10 and S12 are estimated (limited on-chain visibility into loop positions). Verdict would worsen to high-risk if the subsidy taper slips or the reserve LST concentration rises. Re-score after the next points snapshot."
+}

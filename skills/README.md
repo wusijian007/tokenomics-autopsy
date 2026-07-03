@@ -9,6 +9,7 @@ tokenomics**.
 ```
 tokenomics-death-spiral-audit/
   SKILL.md                      # entry point: core idea, 4 modes, quick-reference, red lines
+  scripts/                      # bundled stdlib-only tools: stress_runner.py, report_generator.py + examples
   references/
     anti-patterns.md            # the 15 failure Skills (engine/structure/amplifier/attack) + 15 design axioms
     game-models.md              # the 4 game-theoretic models + critical conditions
@@ -26,11 +27,17 @@ tokenomics-death-spiral-audit/
     simulations.md              # how to run/adapt the 8 calibrated simulations
 ```
 
-## Using it as a Claude Code / Agent skill
-Drop `tokenomics-death-spiral-audit/` into your skills directory (e.g.
-`~/.claude/skills/` or a plugin's `skills/`). It triggers when you ask about token
-model design, sustainability, stablecoin/staking/GameFi/points/restaking
-mechanics, unlock schedules, or due diligence on a token.
+## Installing it in your agent
+The skill follows the open [Agent Skills](https://agentskills.io) standard and
+is fully **self-contained** — it works in Claude Code, Codex CLI, Cursor,
+Gemini CLI, Copilot, Grok Build, and any other spec-compatible agent. Install
+via the Claude Code plugin marketplace
+(`/plugin marketplace add wusijian007/tokenomics-autopsy`) or by copying
+`tokenomics-death-spiral-audit/` into your agent's skills directory
+(`~/.claude/skills/`, `~/.grok/skills/`, …) — all options in the repo's
+[INSTALL.md](../INSTALL.md). It triggers when you ask about token model design,
+sustainability, stablecoin/staking/GameFi/points/restaking mechanics, unlock
+schedules, or due diligence on a token.
 
 ## Using it as a human reference
 - **Evaluating a project**: `SKILL.md` → quick screen in `audit-protocol.md` →

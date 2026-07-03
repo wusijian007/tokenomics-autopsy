@@ -160,7 +160,7 @@ the spiral scorecard **plus** this panel:
 
 **Why a separate panel, not three more scorecard rows:** the 54-point spiral
 scorecard is frozen at v2 for prospective-registry comparability
-(`ROADMAP.md` §3 — no new rows in the total until they clear full
+(the repo [ROADMAP](https://github.com/wusijian007/tokenomics-autopsy/blob/main/ROADMAP.md) §3 — no new rows in the total until they clear full
 re-calibration and a re-freeze). So S13/S14/S15 are reported *alongside* the
 spiral score, never summed into it. S13/S14 (attack surfaces) are genuinely
 orthogonal and stay a separate axis permanently; S15 is structure-class by
@@ -171,7 +171,7 @@ risk; fix before launch (these are cheaper to fix than any spiral engine —
 usually a timelock, a cap, or a delisting). S15 = structure-class: expect
 bleed while the ratio stays ≪ 1.
 
-Historical check (back-scored; see `data/security_panel.py`): every exploited
+Historical check (back-scored; see [data/security_panel.py](https://github.com/wusijian007/tokenomics-autopsy/blob/main/data/security_panel.py) in the research repo): every exploited
 case above scores 2 on its surface **pre-hoc** — the inequality was computable
 from public data before each attack. Defended cases (Curve/Mochi; CRV Aug-23;
 timelocked majors) score 0–1, and each defense maps to a listed antidote.
@@ -202,5 +202,6 @@ with value secured, *persistently, in the bear too*.
     publish revenue/emissions; mint ≤ k·burn once BME exists.
 
 Related simulation: `sim6_governance_capture.py` (the timelock/vote-locking
-phase diagram). Audit integration: `audit-protocol.md` step 7 (control-surface
-map). Case data: `data/security_panel.py`.
+phase diagram, in the research repo's [`simulations/`](https://github.com/wusijian007/tokenomics-autopsy/tree/main/simulations)).
+Audit integration: `audit-protocol.md` step 6 (security panel) and step 8
+(control-surface map). Case data: [data/security_panel.py](https://github.com/wusijian007/tokenomics-autopsy/blob/main/data/security_panel.py).

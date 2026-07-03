@@ -2,16 +2,21 @@
 name: tokenomics-death-spiral-audit
 description: >
   Audit a crypto/Web3 token economic design for death-spiral (reflexive collapse)
-  risk, and guide the design of resilient tokenomics. Use whenever someone is
-  designing, reviewing, or doing due diligence on a token model, stablecoin,
-  staking/yield mechanism, GameFi/Play-to-Earn economy, points/airdrop program,
-  restaking/looped-leverage product, bonding/treasury (3,3) system, or token
-  unlock/emission schedule — or asks "will this tokenomics work", "is this
-  sustainable", "what's the risk in this token model", or "how do I design
-  tokenomics that won't collapse". Built from forensic analysis of 50+ landmark
-  collapses (Terra, OlympusDAO, Axie, FTX, ICP…) and calibrated against a
-  control group of survivors (DAI, USDC, stETH, GMX…).
-license: Open-source (CC BY 4.0). Research / design reference, NOT investment advice.
+  and economic-attack risk, and guide the design of resilient tokenomics. Use
+  whenever someone is designing, reviewing, or doing due diligence on a token
+  model, stablecoin, staking/yield mechanism, GameFi/Play-to-Earn economy,
+  points/airdrop program, restaking/looped-leverage product, bonding/treasury
+  (3,3) system, or token unlock/emission schedule — or asks "will this tokenomics
+  work", "is this sustainable", "what's the risk in this token model", or "how do
+  I design tokenomics that won't collapse". Built from forensic analysis of 50+
+  landmark collapses (Terra, OlympusDAO, Axie, FTX, ICP…), a survivor control
+  group (DAI, USDC, stETH, GMX…), and out-of-sample validation. Research / design
+  reference, NOT investment advice.
+license: CC-BY-4.0
+metadata:
+  version: "2.0.0"
+  instrument: "spiral scorecard v2 (frozen 2026-07-02) + security panel"
+  homepage: "https://github.com/wusijian007/tokenomics-autopsy"
 ---
 
 # Tokenomics Death-Spiral Audit
@@ -20,6 +25,13 @@ A death spiral is **not bad luck or bad ops — it is a built-in phase transitio
 A token model with reflexive feedback is a stable attractor above a critical
 parameter and jumps to a different attractor (→ 0, or → backing) once that
 threshold is crossed. This skill finds the threshold *before* it is crossed.
+
+> **Self-contained.** Everything needed to audit or design ships in this folder:
+> the `references/` knowledge base and runnable, stdlib-only `scripts/`
+> (stress-runner + report generator). The full research repo — 8 calibrated
+> simulations, case datasets, and the validation layer (holdout backtest +
+> frozen prospective registry) — is optional and lives at
+> https://github.com/wusijian007/tokenomics-autopsy.
 
 ## The one idea that explains every collapse
 
@@ -92,14 +104,15 @@ from price (`λ < 1`)**. Then reach for the constructive toolkit:
   (rewards as contracts: IC/IR, Goodhart red-team, sybil cost, cohort accounting).
 
 ### Mode C — Demonstrating / stress-testing a mechanism
-The `simulations/` folder (see `references/simulations.md`) has 8 runnable,
-calibrated models — six failure archetypes plus two constructive ones (`sim7`
-PID-damped stability, `sim8` spender-class economy). Use them to *show* the
-phase transition, fit the critical parameter to a specific design, or generate
-charts for a report. The math behind λ (Jacobian spectral radius + the
-reflexivity-beta estimation programme) is in `references/lambda-formalization.md`.
-To score a whole design at once, `tools/stress_runner.py` runs the relevant sims
-and emits the step-9 verdict from a `design.yaml`.
+To score a whole design at once, run the **bundled** `scripts/stress_runner.py`
+on a copy of `scripts/design.example.yaml` — it scores all 12 spiral rows plus
+the security panel and emits the step-9 verdict (stdlib-only, works anywhere
+this skill is installed). For the phase-transition demonstrations themselves,
+the research repo's `simulations/` folder has 8 runnable, calibrated models —
+six failure archetypes plus two constructive ones (`sim7` PID-damped stability,
+`sim8` spender-class economy); see `references/simulations.md`. The math behind
+λ (Jacobian spectral radius + the reflexivity-beta estimation programme) is in
+`references/lambda-formalization.md`.
 
 ## Quick-reference: the 15 failure Skills
 

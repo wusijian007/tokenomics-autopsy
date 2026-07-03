@@ -106,7 +106,7 @@ outcomes in the registry projects, the whole reflexivity framing needs revising
 — and that is exactly the kind of test the validation layer is built for.
 
 **Status & honesty.** This is a **research programme**, not a current scorecard
-input (ROADMAP §2.2, G-10). It requires clean panel data and defensible
+input (repo [ROADMAP](https://github.com/wusijian007/tokenomics-autopsy/blob/main/ROADMAP.md) §2.2, G-10). It requires clean panel data and defensible
 identification; done badly it manufactures false precision. Done well it is the
 instrument's most defensible differentiator: *measured* reflexivity, with error
 bars, instead of asserted reflexivity. Until then, the scorecard's row-based

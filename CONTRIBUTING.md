@@ -29,7 +29,12 @@ new game-theoretic model.
   and still dies, or one it wrongly condemns. See `validation/red-team.md`;
   every successful attack becomes a new row, a row fix, or a documented limit.
 - **Tools** — improvements to `tools/` (stress-runner spec coverage, report
-  templates, wiring the registry monitor's data layer to live feeds).
+  templates, wiring the registry monitor's data layer to live feeds). Note:
+  `stress_runner.py` / `report_generator.py` + their examples are byte-mirrored
+  into `skills/tokenomics-death-spiral-audit/scripts/`; edit the `tools/` copy,
+  re-copy the mirror, and run `python tools/build_skill_dist.py` — it fails on
+  drift, on any skill link that escapes the skill folder, and on frontmatter
+  spec violations.
 - **Translations** — keeping the EN ⇄ ZH documents in sync.
 - **Data** — improving `data/case_dataset.py` / `data/scorecard_calibration.py`
   with better-sourced estimates.

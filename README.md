@@ -105,6 +105,17 @@ See [`game-models.md`](skills/tokenomics-death-spiral-audit/references/game-mode
 
 ---
 
+## Install as an agent skill
+
+The skill pack follows the open [Agent Skills](https://agentskills.io) standard — the same folder works in **Claude Code, Codex CLI, Cursor, Gemini CLI, Copilot, Grok Build**, and 16+ other agents:
+
+```
+/plugin marketplace add wusijian007/tokenomics-autopsy        # Claude Code (Grok reads it too)
+/plugin install tokenomics-death-spiral-audit@tokenomics-autopsy
+```
+
+or copy `skills/tokenomics-death-spiral-audit/` into your agent's skills directory (`~/.claude/skills/`, `~/.grok/skills/`, …). Self-contained: 14 reference docs + stdlib-only runnable `scripts/`. All options incl. a zip build and a single-file prompt pack for no-skill platforms: **[INSTALL.md](INSTALL.md)**.
+
 ## Quick start
 
 **Screen a token in 15 minutes:** run the 8-question quick screen at the top of
@@ -145,8 +156,9 @@ cryptofail/
 ├── death-spiral-deep-analysis.md          # L2 deep analysis (EN, with charts) / 代币经济学死亡螺旋_深度分析与失败Skills.md (ZH)
 ├── skills/
 │   ├── README.md
-│   └── tokenomics-death-spiral-audit/
+│   └── tokenomics-death-spiral-audit/     # installable Agent Skill (see INSTALL.md)
 │       ├── SKILL.md                       # L3 skill entry point (4 modes)
+│       ├── scripts/                       # bundled stdlib-only stress-runner + report generator
 │       └── references/{anti-patterns,game-models,scorecard,economic-security,
 │                       audit-protocol,survivors,design-playbook,design-patterns,
 │                       archetype-playbooks,liquidity-engineering,circular-economy,

@@ -2,7 +2,9 @@
 
 Behind 50+ collapses there are only **four** recurring game structures. Classify
 any new design into one (or more) of these, then read off the failure mode and
-the critical condition. Runnable, calibrated versions live in `simulations/`.
+the critical condition. Runnable, calibrated versions live in the research
+repo's [`simulations/`](https://github.com/wusijian007/tokenomics-autopsy/tree/main/simulations)
+folder — see `simulations.md` in these references.
 
 ---
 

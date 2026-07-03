@@ -10,8 +10,9 @@ S1–S10 are distilled from the 2009–2022 collapse record; S11–S12 cover the
 mechanism itself is mispriced (full framework: `economic-security.md`).
 Measurement procedures for every red flag live in `scorecard.md`.
 
-> Companion analysis with full derivations: `../../../death-spiral-deep-analysis.md`
-> (Chinese: `代币经济学死亡螺旋_深度分析与失败Skills.md`). Game models: `game-models.md`.
+> Companion analysis with full derivations (research repo):
+> [death-spiral-deep-analysis.md](https://github.com/wusijian007/tokenomics-autopsy/blob/main/death-spiral-deep-analysis.md)
+> (Chinese: 代币经济学死亡螺旋_深度分析与失败Skills.md). Game models: `game-models.md`.
 > Control group (why survivors survived): `survivors.md`.
 
 ## Four tiers — engines, structures, amplifiers, attack surfaces
@@ -26,7 +27,7 @@ Measurement procedures for every red flag live in `scorecard.md`.
 S13/S14/S15 report on a **separate security panel**, not the 54-point spiral
 total (see `scorecard.md` and `economic-security.md`). Reason: the 54-point
 scorecard is **frozen at v2** for prospective-registry comparability, and
-instrument discipline (`ROADMAP.md` §3) bars folding new rows into the total
+instrument discipline (the repo [ROADMAP](https://github.com/wusijian007/tokenomics-autopsy/blob/main/ROADMAP.md) §3) bars folding new rows into the total
 until they clear full re-calibration and a re-freeze. S15 is *structure-class
 by nature* (it produces a slow bleed), which is why it sits in the structure
 tier above — but for scoring integrity it lives on the panel for now. Attack

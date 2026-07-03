@@ -10,6 +10,12 @@ involved); each reads a small declarative input so results are reproducible.
 | [`report_generator.py`](report_generator.py) | `audit.example.json` | Formats a **completed audit** into the full `audit-protocol.md` report (evidence table, security panel, thresholds, valuation quadrant, blind-spot register). The "write up a human audit" tool. |
 | [`kappa_reliability.py`](kappa_reliability.py) | two score sheets | Weighted Cohen's κ between two independent scorers, per-row + overall (E3 reliability). Ships a demo; a real study needs two humans + a blind set. |
 | [`registry_monitor.py`](registry_monitor.py) | `registry_metrics.example.json` | Checks the frozen prospective-registry projects against their pre-registered triggers → OK / WATCH / ALERT. Data layer is a stub; wire to live feeds for production. |
+| [`build_skill_dist.py`](build_skill_dist.py) | — | Validates the installable skill (frontmatter spec, self-containment, `scripts/` drift vs `tools/`) and builds `dist/`: the skill zip + a single-file `PROMPT_PACK.md` for no-skill platforms. |
+
+> `stress_runner.py`, `report_generator.py` and their two example inputs are
+> **byte-mirrored** into `skills/tokenomics-death-spiral-audit/scripts/` so the
+> installed skill is self-contained. Edit the `tools/` copy (canonical), then
+> re-copy; `build_skill_dist.py` fails the build on any drift.
 
 ## Quick start
 

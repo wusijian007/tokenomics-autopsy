@@ -370,6 +370,19 @@ blind set — the machinery is ready); the **ABM/cadCAD bridge** (needs a real A
 framework to be worth shipping); **scored universe → 100** with independent
 labels. These stay open items, tracked in `validation/README.md`.
 
+### Post-v6 (2026-07) — cross-agent distribution shipped
+
+The skill pack is now installable in any [Agent-Skills](https://agentskills.io)-
+compatible agent (Claude Code, Codex CLI, Cursor, Gemini CLI, Copilot, Grok
+Build, …): made fully **self-contained** (stdlib-only `scripts/` bundle of the
+stress-runner + report generator; zero references escaping the skill folder),
+plus a Claude Code **plugin marketplace** (`.claude-plugin/`, which Grok Build
+also reads), root `AGENTS.md`, per-platform `INSTALL.md`, and
+`tools/build_skill_dist.py` (frontmatter/self-containment/drift validation +
+skill zip + a compiled `PROMPT_PACK.md` for no-skill platforms). Advances §7
+adoption item 3 (agent-native distribution). Remaining adoption work: publish
+a GitHub Release with the dist artifacts, submit to skill directories.
+
 ### v5 shipped — what landed vs the gap register
 
 Closed with the constructive work: **G-1…G-5** (incentive-audit: rewards as

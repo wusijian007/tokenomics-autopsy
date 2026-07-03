@@ -1,0 +1,22 @@
+{
+  "name": "tokenomics-death-spiral-audit",
+  "version": "2.0.0",
+  "description": "Audit any token design for death-spiral (reflexive collapse) and economic-attack risk, and design resilient tokenomics. 15 anti-patterns from 50+ collapse post-mortems, a measurable scorecard + cost-of-corruption security panel, a survivor control group, out-of-sample validation, 16 positive design patterns, 8 archetype playbooks, and a bundled stdlib-only stress-runner. Research/design reference, not investment advice.",
+  "author": {
+    "name": "wusijian007",
+    "url": "https://github.com/wusijian007"
+  },
+  "homepage": "https://github.com/wusijian007/tokenomics-autopsy",
+  "repository": "https://github.com/wusijian007/tokenomics-autopsy",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "tokenomics",
+    "crypto",
+    "defi",
+    "audit",
+    "mechanism-design",
+    "risk",
+    "stablecoin",
+    "gamefi"
+  ]
+}

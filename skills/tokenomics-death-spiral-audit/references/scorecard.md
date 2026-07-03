@@ -50,7 +50,7 @@ Spiral risk (reflexive dynamics) and **attack risk** (discrete exploits where
 the code works but the mechanism is mispriced) are orthogonal. Score the three
 economic-attack rows on a **separate panel** and report it beside the spiral
 score — never summed into the 54 (the total is frozen at v2 for registry
-comparability; see `ROADMAP.md` §3).
+comparability; see the repo [ROADMAP](https://github.com/wusijian007/tokenomics-autopsy/blob/main/ROADMAP.md) §3).
 
 | Row | Skill | Metric (0 / 1 / 2) | Sources |
 |---|---|---|---|
@@ -61,7 +61,7 @@ comparability; see `ROADMAP.md` §3).
 **Any 2 on S13/S14 = red line** — treat as already-exploited when sizing risk;
 these are usually the *cheapest* fixes in the whole audit (a timelock, a cap, a
 delisting). Full framework, instances, and antidotes: `economic-security.md`.
-Back-scored calibration: `data/security_panel.py`.
+Back-scored calibration: [data/security_panel.py](https://github.com/wusijian007/tokenomics-autopsy/blob/main/data/security_panel.py) (research repo).
 
 ---
 
@@ -111,7 +111,7 @@ Full control-group analysis: `survivors.md`.
 The scorecard was back-scored against **18 historical cases**: 10 collapses
 (Terra, Iron, Basis, OHM, Wonderland, Axie/SLP, STEPN/GST, FTX, Celsius, ICP)
 and 8 survivors of severe stress (DAI, USDC, stETH, BNB, ETH, GMX, UNI, CRV).
-Scoring matrix + chart generator: [`data/scorecard_calibration.py`](../../../data/scorecard_calibration.py);
+Scoring matrix + chart generator: [`data/scorecard_calibration.py`](https://github.com/wusijian007/tokenomics-autopsy/blob/main/data/scorecard_calibration.py);
 chart: `simulations/charts/data_scorecard_separation.png`.
 
 Results (in-sample, order-of-magnitude scoring):
@@ -138,10 +138,10 @@ Results (in-sample, order-of-magnitude scoring):
 
 ## Out-of-sample validation
 
-The repo's [`validation/`](../../../validation/README.md) layer tests the
+The research repo's [`validation/`](https://github.com/wusijian007/tokenomics-autopsy/blob/main/validation/README.md) layer tests the
 instrument on evidence it has never seen:
 
-- **Holdout backtest** (`validation/holdout_backtest.py`) — 15 historical
+- **Holdout backtest** ([validation/holdout_backtest.py](https://github.com/wusijian007/tokenomics-autopsy/blob/main/validation/holdout_backtest.py)) — 15 historical
   cases (8 collapses, 7 stress survivors) that appear nowhere in this repo and
   were never used in derivation or calibration (leakage-audited). Result: the
   totals overlap in the 8–18 band, but the **engine → structure → anchor
@@ -149,7 +149,7 @@ instrument on evidence it has never seen:
   structure-only bleeds (Blur, Celestia) and the stressed survivor (Frax, 10).
   The known weak spot (total-only in the elevated band) fails out-of-sample in
   the same, predicted way as in-sample.
-- **Prospective registry** (`validation/prospective-registry.md`) — living
+- **Prospective registry** ([validation/prospective-registry.md](https://github.com/wusijian007/tokenomics-autopsy/blob/main/validation/prospective-registry.md)) — living
   projects scored and frozen on 2026-07-02 with falsifiable predictions and
   fixed review dates (2027/2028). This is the bias-free tier: the registry
   grades the instrument in both directions, and two or more misclassifications

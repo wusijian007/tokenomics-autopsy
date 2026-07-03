@@ -104,6 +104,17 @@
 
 ---
 
+## 安装为 agent skill / Install as an agent skill
+
+skill pack 遵循开放的 [Agent Skills](https://agentskills.io) 标准——同一个文件夹可用于 **Claude Code、Codex CLI、Cursor、Gemini CLI、Copilot、Grok Build** 等 16+ 个 agent:
+
+```
+/plugin marketplace add wusijian007/tokenomics-autopsy        # Claude Code(Grok 也会读取)
+/plugin install tokenomics-death-spiral-audit@tokenomics-autopsy
+```
+
+或把 `skills/tokenomics-death-spiral-audit/` 复制进 agent 的 skills 目录(`~/.claude/skills/`、`~/.grok/skills/` …)。完全自包含:14 份参考文档 + 零依赖可运行 `scripts/`。全部安装方式(含 zip 构建与无 skill 平台的单文件 prompt pack):**[INSTALL.md](INSTALL.md)**。
+
 ## 快速开始 / Quick start
 
 **15 分钟快筛**:用 [`audit-protocol.md`](skills/tokenomics-death-spiral-audit/references/audit-protocol.md) 开头的 8 问快筛 → `PASS` / `CONCERNS` / `RED LINE`。
@@ -143,7 +154,8 @@ cryptofail/
 ├── skills/
 │   ├── README.md
 │   └── tokenomics-death-spiral-audit/
-│       ├── SKILL.md                           # L3 skill 入口(4 种模式)
+│       ├── SKILL.md                           # L3 skill 入口(4 种模式;可安装,见 INSTALL.md)
+│       ├── scripts/                           # 捆绑的零依赖 stress-runner + 报告生成器
 │       └── references/{anti-patterns,game-models,scorecard,economic-security,
 │                       audit-protocol,survivors,design-playbook,design-patterns,
 │                       archetype-playbooks,liquidity-engineering,circular-economy,

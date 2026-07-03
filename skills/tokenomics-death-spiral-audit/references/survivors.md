@@ -117,11 +117,12 @@ Format: stress event → why it held → which axiom it validates → score.
   layers. The April 2024 ezETH cascade was a small-scale preview.
 
 These watch items are now **pre-registered with scores and falsifiable
-predictions** in the repo's prospective registry
-(`validation/prospective-registry.md`, frozen 2026-07-02, reviews 2027/2028) —
-along with further out-of-sample survivor evidence (USDT's post-FTX $20B+
-redemption wave, Frax's de-risking pivot, rETH, Aave, AMPL, Pendle) in
-`validation/holdout_backtest.py`.
+predictions** in the research repo's prospective registry
+([validation/prospective-registry.md](https://github.com/wusijian007/tokenomics-autopsy/blob/main/validation/prospective-registry.md),
+frozen 2026-07-02, reviews 2027/2028) — along with further out-of-sample
+survivor evidence (USDT's post-FTX $20B+ redemption wave, Frax's de-risking
+pivot, rETH, Aave, AMPL, Pendle) in
+[validation/holdout_backtest.py](https://github.com/wusijian007/tokenomics-autopsy/blob/main/validation/holdout_backtest.py).
 
 ---
 
