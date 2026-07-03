@@ -27,9 +27,10 @@
 | **L3 Knowledge** — Skills | A triggerable open-source skill pack: 15 failure anti-patterns (12 spiral + 3 economic-attack) + a measurable scorecard + security panel + audit protocol (evaluation), and a 16-mechanism positive pattern library + 8 archetype playbooks + liquidity/circular-economy/incentive deep dives (design) | [`skills/`](skills/) |
 
 Supporting layers:
-- [`simulations/`](simulations/) — 4 calibrated, reproducible Python simulations that generate every phase-transition chart.
-- [`data/`](data/) — a structured dataset of 38 cases, an 18-case scorecard calibration (10 collapses vs 8 survivors), and macro overview charts.
-- [`validation/`](validation/README.md) — **out-of-sample validation**: a 15-case leakage-audited holdout backtest + a frozen prospective registry with falsifiable predictions (reviews 2027/2028).
+- [`simulations/`](simulations/) — 8 calibrated, reproducible Python simulations (6 failure archetypes + `sim7` PID-damped stability + `sim8` spender-class economy).
+- [`data/`](data/) — a 38-case dataset, an 18-case scorecard calibration, a cost-of-corruption security back-scoring (S13/S14/S15), and a 53-case scored universe with an empirical weight fit.
+- [`validation/`](validation/README.md) — **out-of-sample validation**: a 15-case leakage-audited holdout backtest + a frozen prospective registry (reviews 2027/2028) + a red-team program.
+- [`tools/`](tools/README.md) — the product layer: a stress-runner (design spec → verdict), a report generator, and κ / registry-monitor tooling.
 
 > Chinese versions of every document are available: [中文 README](README.zh.md) · [L1 中文](加密项目代币崩溃分析_2009-2026.md) · [L2 中文](代币经济学死亡螺旋_深度分析与失败Skills.md).
 

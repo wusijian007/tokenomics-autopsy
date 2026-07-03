@@ -28,9 +28,10 @@
 | **L3 知识层** Skills | 可触发的开源 skill pack:评估侧 = 15 个失败反模式(12 螺旋 + 3 经济攻击)+ 可测量评分卡 + 腐化成本安全面板 + 审计协议;设计侧 = 16 个正向机制模式库 + 8 个赛道 playbook + 流动性/循环经济/激励深潜文档 | [`skills/`](skills/) |
 
 支撑层 / Supporting:
-- [`simulations/`](simulations/) — 4 个校准过的可复现 Python 仿真,生成所有相变图表。
-- [`data/`](data/) — 38 个案例的结构化数据集 + 18 案例评分卡校准(10 崩盘 vs 8 幸存者)+ 宏观总览图。
-- [`validation/`](validation/README.md) — **out-of-sample 验证**:15 案例泄漏审计留出集回测 + 冻结的前瞻性预注册登记册(可证伪预测,2027/2028 复核)。
+- [`simulations/`](simulations/) — 8 个校准过的可复现 Python 仿真(6 个失败原型 + sim7 PID 阻尼稳定 + sim8 spender-class 经济)。
+- [`data/`](data/) — 38 案例数据集 + 18 案例评分卡校准 + 腐化成本安全面板回测(S13/S14/S15)+ 53 案例评分宇宙与经验权重拟合。
+- [`validation/`](validation/README.md) — **out-of-sample 验证**:15 案例泄漏审计留出集回测 + 冻结的前瞻性预注册登记册(2027/2028 复核)+ 红队程序。
+- [`tools/`](tools/README.md) — 产品层:stress-runner(设计规格 → 结论)、报告生成器、κ 与登记册监控工具。
 
 ---
 

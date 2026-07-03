@@ -32,7 +32,7 @@ outcome definitions now, so progress is checkable:
 - D1. Per-archetype playbooks (DEX / lending / perp / L1 / game / DePIN /
   stablecoin / restaking) each anchored to survivor benchmarks.
 - D2. A **positive mechanism pattern library** — the constructive dual of the
-  12 anti-patterns — with parameters and known failure modes per pattern.
+  15 anti-patterns — with parameters and known failure modes per pattern.
 - D3. A stress-runner: a machine-readable design spec in → Monte Carlo bear
   scenarios out → the playbook's step-9 verdict generated, not hand-assembled.
 - D4. At least one real launch designed with the toolkit that later **passes
