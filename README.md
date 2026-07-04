@@ -1,8 +1,10 @@
-![tokenomics-autopsy](assets/social-preview.png)
+![Tokenomics Soundcheck](assets/social-preview.png)
 
-# tokenomics-autopsy
+# Tokenomics Soundcheck
 
-**Forensic post-mortems of 50+ token death spirals — and a design skill to avoid them.**
+> **Sound money needs sound mechanisms.**
+
+**Design token economies that don't fuel their own collapse — and stress-test them before they launch.**
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](LICENSE)
 [![Python 3.x](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](simulations/)

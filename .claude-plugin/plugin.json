@@ -1,7 +1,7 @@
 {
   "name": "tokenomics-death-spiral-audit",
   "version": "2.0.0",
-  "description": "Audit any token design for death-spiral (reflexive collapse) and economic-attack risk, and design resilient tokenomics. 15 anti-patterns from 50+ collapse post-mortems, a measurable scorecard + cost-of-corruption security panel, a survivor control group, out-of-sample validation, 16 positive design patterns, 8 archetype playbooks, and a bundled stdlib-only stress-runner. Research/design reference, not investment advice.",
+  "description": "Tokenomics Soundcheck — design token economies that don't fuel their own collapse, and stress-test them before launch. Catches death-spiral (reflexive collapse) and economic-attack risk: 15 anti-patterns from 50+ collapse post-mortems, a measurable scorecard + cost-of-corruption security panel, a survivor control group, out-of-sample validation, 16 positive design patterns, 8 archetype playbooks, and a bundled stdlib-only stress-runner. Research/design reference, not investment advice.",
   "author": {
     "name": "wusijian007",
     "url": "https://github.com/wusijian007"

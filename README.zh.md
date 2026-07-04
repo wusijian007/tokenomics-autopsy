@@ -1,8 +1,11 @@
-![tokenomics-autopsy](assets/social-preview.png)
+![Tokenomics Soundcheck](assets/social-preview.png)
 
-# tokenomics-autopsy
+# Tokenomics Soundcheck
 
-**代币死亡螺旋的机制级"尸检" + 一套避坑设计 skill。**
+> **健全的货币,需要健全的机制。** _Sound money needs sound mechanisms._
+
+**设计不会为自身崩塌供能的代币经济——并在上线前压力测试它。**
+Design token economies that don't fuel their own collapse — and stress-test them before they launch.
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](LICENSE)
 [![Python 3.x](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](simulations/)

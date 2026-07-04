@@ -5,14 +5,14 @@
     "url": "https://github.com/wusijian007"
   },
   "metadata": {
-    "description": "Forensic tokenomics: audit token designs for death-spiral and economic-attack risk, and design resilient crypto economies.",
+    "description": "Tokenomics Soundcheck: design token economies that don't fuel their own collapse, and stress-test them before launch.",
     "version": "2.0.0"
   },
   "plugins": [
     {
       "name": "tokenomics-death-spiral-audit",
       "source": "./",
-      "description": "Audit any token design for death-spiral (reflexive collapse) and economic-attack risk, and design resilient tokenomics. 15 anti-patterns from 50+ collapse post-mortems, a measurable scorecard + cost-of-corruption security panel, a survivor control group, out-of-sample validation, 16 positive design patterns, 8 archetype playbooks, and a bundled stdlib-only stress-runner. Research/design reference, not investment advice.",
+      "description": "Tokenomics Soundcheck — design token economies that don't fuel their own collapse, and stress-test them before launch. Catches death-spiral (reflexive collapse) and economic-attack risk: 15 anti-patterns from 50+ collapse post-mortems, a measurable scorecard + cost-of-corruption security panel, a survivor control group, out-of-sample validation, 16 positive design patterns, 8 archetype playbooks, and a bundled stdlib-only stress-runner. Research/design reference, not investment advice.",
       "version": "2.0.0",
       "author": {
         "name": "wusijian007"

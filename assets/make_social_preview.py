@@ -42,16 +42,18 @@ ax.add_collection(lc)
 ax.plot(0, 0, "o", color="#dc2626", ms=7)  # the zero it spirals into
 
 # --- text (left side) ---
-fig.text(0.045, 0.74, "tokenomics-autopsy", color="white",
-         fontsize=46, fontweight="bold")
-fig.text(0.047, 0.625, "Forensic post-mortems of token death spirals",
-         color="#cbd5e1", fontsize=20)
-fig.text(0.047, 0.555, "— and a design skill to avoid them.",
-         color="#cbd5e1", fontsize=20)
-fig.text(0.047, 0.40,
+fig.text(0.045, 0.75, "Tokenomics Soundcheck", color="white",
+         fontsize=42, fontweight="bold")
+fig.text(0.047, 0.645, "Sound money needs sound mechanisms.",
+         color="#cbd5e1", fontsize=19, style="italic")
+fig.text(0.047, 0.55, "Design token economies that don't fuel their own",
+         color="#cbd5e1", fontsize=18)
+fig.text(0.047, 0.49, "collapse — and stress-test them before they launch.",
+         color="#cbd5e1", fontsize=18)
+fig.text(0.047, 0.36,
          "50+ collapses   ·   15 failure skills   ·   4 game models   ·   reproducible sims",
          color="#7dd3fc", fontsize=15, fontweight="bold")
-fig.text(0.047, 0.30, "λ > 1  →  price becomes the fuel for its own collapse",
+fig.text(0.047, 0.26, "λ > 1  →  price becomes the fuel for its own collapse",
          color="#94a3b8", fontsize=14, style="italic")
 fig.text(0.047, 0.115, "github.com/wusijian007/tokenomics-autopsy   ·   CC BY 4.0",
          color="#64748b", fontsize=13)

@@ -1,8 +1,8 @@
 ---
-name: tokenomics-death-spiral-audit
+name: tokenomics-soundcheck
 description: >
-  Audit a crypto/Web3 token economic design for death-spiral (reflexive collapse)
-  and economic-attack risk, and guide the design of resilient tokenomics. Use
+  Design and stress-test a crypto/Web3 token economy for soundness — catching
+  death-spiral (reflexive collapse) and economic-attack risk before launch. Use
   whenever someone is designing, reviewing, or doing due diligence on a token
   model, stablecoin, staking/yield mechanism, GameFi/Play-to-Earn economy,
   points/airdrop program, restaking/looped-leverage product, bonding/treasury
@@ -19,7 +19,12 @@ metadata:
   homepage: "https://github.com/wusijian007/tokenomics-autopsy"
 ---
 
-# Tokenomics Death-Spiral Audit
+# Tokenomics Soundcheck
+
+> **Sound money needs sound mechanisms.**
+
+Design token economies that don't fuel their own collapse — and stress-test them
+before they launch.
 
 A death spiral is **not bad luck or bad ops — it is a built-in phase transition.**
 A token model with reflexive feedback is a stable attractor above a critical
